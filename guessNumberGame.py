@@ -8,14 +8,17 @@ print('Well ' + name + ' , I\'m thinking of a number between one and twenty')
 
 for guessesTaken in range(1,7):
     print('Take a guess')
-    guess = int(input())
+    try:
+        guess = int(input())
 
-    if guess < secretNum:
-        print('Too low. Guess higher.')
-    elif guess > secretNum:
-        print('Too high, guess lower')
-    else:
-        break
+        if guess < secretNum:
+            print('Too low. Guess higher.')
+        elif guess > secretNum:
+            print('Too high, guess lower')
+        else:
+            break
+    except:
+        print('That isn\'t a number')
 
 if guess == secretNum:
     print('Hooray, you\'ve guessed the right number!')
